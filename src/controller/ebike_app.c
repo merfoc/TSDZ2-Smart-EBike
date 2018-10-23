@@ -786,6 +786,9 @@ static void read_pas_cadence (void)
       ui8_pas_cadence_rpm = configuration_variables.ui8_pas_max_cadence;
     }
   }
+
+  // set cadence to zero if pedals are rotating backwards
+  if (ui8_pas_direction) { ui8_pas_cadence_rpm = 0; }
 }
 
 static void torque_sensor_read (void)
@@ -846,6 +849,13 @@ static void torque_sensor_read (void)
   else
   {
     ui8_torque_sensor = ui8_torque_sensor_raw;
+  }
+
+  // set torque to zero if pedals are rotating backwards
+  if (ui8_pas_direction) 
+  { 
+    ui8_torque_sensor_raw = 0; 
+    ui8_torque_sensor = 0; 
   }
 }
 

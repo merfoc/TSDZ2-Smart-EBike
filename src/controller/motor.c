@@ -816,7 +816,7 @@ void TIM1_CAP_COM_IRQHandler(void) __interrupt(TIM1_CAP_COM_IRQHANDLER)
    {
      ui16_pas_pwm_cycles_ticks = (uint16_t) PAS_ABSOLUTE_MIN_CADENCE_PWM_CYCLE_TICKS;
      ui16_pas_counter = 0;
-     ui8_pas_direction = 0;
+     ui8_pas_direction = 1;
 
      ui16_torque_sensor_throttle_processed_value = 0;
    }
