@@ -1042,7 +1042,7 @@ void calc_foc_angle (void)
     break;
 
     default:
-      ui32_l_x1048576 = 142; // 48V motor
+      ui32_l_x1048576 = 140; // 48V motor
       experimental_high_cadence_mode = 0;
     break;
   }
